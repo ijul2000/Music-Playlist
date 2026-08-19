@@ -3,12 +3,50 @@
 <head>
   <base target="_top">
   <meta charset="UTF-8">
-  <?!= include('Stylesheet'); ?>
+  <title>Synthwave App</title>
+  <?!= include('style'); ?>
 </head>
 <body>
 
-  <div class="neon-page"></div>
+  <div class="app-container">
 
-  <?!= include('JavaScript'); ?>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="logo">◈ SYNTH</span>
+        <button class="toggle-btn" id="toggleBtn">☰</button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active">
+          <span class="icon">🏠</span><span class="label">Home</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="icon">📊</span><span class="label">Dashboard</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="icon">⚙️</span><span class="label">Settings</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="icon">📁</span><span class="label">Fail</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="icon">ℹ️</span><span class="label">Tentang</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span>v1.0</span>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT (kosong) -->
+    <main class="main-content" id="mainContent">
+      <!-- Sengaja dibiarkan kosong -->
+    </main>
+
+  </div>
+
+  <?!= include('script'); ?>
 </body>
 </html>
