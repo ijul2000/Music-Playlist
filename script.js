@@ -1,10 +1,8 @@
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var sidebar = document.getElementById('sidebar');
-    var toggleBtn = document.getElementById('toggleBtn');
+document.addEventListener('DOMContentLoaded', function () {
+  var sidebar = document.getElementById('sidebar');
+  var toggleBtn = document.getElementById('toggleBtn');
 
-    toggleBtn.addEventListener('click', function () {
-      sidebar.classList.toggle('collapsed');
-    });
+  toggleBtn.addEventListener('click', function () {
+    sidebar.classList.toggle('collapsed');
   });
-</script>
+});
