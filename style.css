@@ -51,22 +51,6 @@
     z-index: 0;
   }
 
-  body::after {
-    /* matahari neon purple->green */
-    content: "";
-    position: fixed;
-    top: 12%;
-    left: 50%;
-    width: 260px;
-    height: 260px;
-    background: linear-gradient(180deg, var(--sw-green-deep) 0%, var(--sw-purple) 60%, var(--sw-purple-deep) 100%);
-    border-radius: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 0 140px rgba(176, 38, 255, 0.5), 0 0 80px rgba(57, 255, 20, 0.25);
-    z-index: 0;
-    pointer-events: none;
-  }
-
   /* ===== LAYOUT ===== */
   .app-container {
     display: flex;
