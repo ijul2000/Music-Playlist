@@ -37,9 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // Tiada data tersimpan di localStorage lagi — guna songs.js sebagai data permulaan
     if (window.PRIME_MUSIC_SONGS && Array.isArray(window.PRIME_MUSIC_SONGS)) {
-      return window.PRIME_MUSIC_SONGS.map((s) => ({ ...s, id: String(s.id) }));
+      return window.PRIME_MUSIC_SONGS.map((s) => ({ ...s, id: makeId() }));
     }
     return [];
+  }
+
+  function makeId() {
+    return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
   }
 
   function saveSongs() {
@@ -159,7 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnDownload.addEventListener('click', () => {
     const body = songs.map((s) => `  {
-    id: ${JSON.stringify(s.id)},
     title: ${JSON.stringify(s.title)},
     artist: ${JSON.stringify(s.artist)},
     year: ${JSON.stringify(Number(s.year) || s.year)},
@@ -174,7 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
   padam lagu terus dalam kod, TANPA perlu guna panel Admin.
 
   Medan setiap lagu:
-    id, title, artist, year, poster (URL imej), audio (URL lagu)
+    title, artist, year, poster (URL imej), audio (URL lagu)
+
+  Tak perlu isi "id" — sistem urus sendiri.
 
   Fail ini dijana dari panel Admin. Muat naik fail ini ke repo
   GitHub anda (gantikan songs.js sedia ada) supaya lagu kekal
@@ -225,7 +230,7 @@ ${body}
         : s);
     } else {
       songs.push({
-        id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+        id: makeId(),
         title, artist, year, poster, audio
       });
     }
