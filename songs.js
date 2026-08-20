@@ -4,34 +4,36 @@
   Anda boleh EDIT fail ini secara manual untuk tambah, ubah, atau
   padam lagu terus dalam kod, TANPA perlu guna panel Admin.
 
-  Setiap lagu ialah satu objek dengan medan berikut:
-    title  - tajuk lagu
-    artist - nama artist
-    year   - tahun keluaran (nombor)
-    poster - link/URL imej poster/cover lagu
-    audio  - link/URL fail audio lagu (mp3, dsb.)
+  Medan setiap lagu:
+    title, artist, year, poster (URL imej), audio (URL lagu)
 
-  Contoh:
-    {
-      title: "Nama Lagu Anda",
-      artist: "Nama Artist",
-      year: 2024,
-      poster: "https://contoh.com/poster.jpg",
-      audio: "https://contoh.com/lagu.mp3"
-    }
+  Tak perlu isi "id" — sistem urus sendiri.
 
-  Tambah objek baru dalam array PRIME_MUSIC_SONGS di bawah,
-  dipisahkan dengan koma. Tak perlu isi "id" — sistem akan
-  urus sendiri. Panel Admin di laman web akan guna senarai
-  ini sebagai data permulaan.
+  Fail ini dijana dari panel Admin. Muat naik fail ini ke repo
+  GitHub anda (gantikan songs.js sedia ada) supaya lagu kekal
+  untuk semua pelawat, bukan setakat pelayar ini sahaja.
 */
 
 const PRIME_MUSIC_SONGS = [
   {
-    title: "Contoh Lagu",
-    artist: "Contoh Artist",
-    year: 2024,
-    poster: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop",
-    audio: "https://example.com/contoh-lagu.mp3"
+    title: "1",
+    artist: "1",
+    year: 2022,
+    poster: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg",
+    audio: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg"
+  },
+  {
+    title: "2",
+    artist: "2",
+    year: 2021,
+    poster: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg",
+    audio: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg"
+  },
+  {
+    title: "3",
+    artist: "3",
+    year: 2015,
+    poster: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg",
+    audio: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg"
   }
 ];
