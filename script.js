@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const STORAGE_KEY = 'primemusic_songs';
-
   const navButtons = document.querySelectorAll('.nav-btn');
   const views = document.querySelectorAll('.view');
 
@@ -26,16 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let songs = loadSongs();
   let editingId = null;
 
-  // ---------- Storage ----------
+  // ---------- Data ----------
+  // songs.js ialah satu-satunya sumber data yang kekal (persistent).
+  // Sebarang tambah/edit/padam melalui panel Admin hanya bertahan
+  // untuk sesi semasa (dalam memori pelayar) — klik "Muat Turun
+  // songs.js" untuk simpan perubahan itu secara kekal ke dalam fail.
 
   function loadSongs() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) return JSON.parse(raw);
-    } catch (e) {
-      // ignore, fall through to file data
-    }
-    // Tiada data tersimpan di localStorage lagi — guna songs.js sebagai data permulaan
     if (window.PRIME_MUSIC_SONGS && Array.isArray(window.PRIME_MUSIC_SONGS)) {
       return window.PRIME_MUSIC_SONGS.map((s) => ({ ...s, id: makeId() }));
     }
@@ -44,14 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function makeId() {
     return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
-  }
-
-  function saveSongs() {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(songs));
-    } catch (e) {
-      // storage unavailable — data will stay in-memory for this session
-    }
   }
 
   // ---------- Nav / view switching ----------
@@ -235,7 +222,6 @@ ${body}
       });
     }
 
-    saveSongs();
     renderAdmin();
     renderLibrary();
     closeModal();
@@ -255,7 +241,6 @@ ${body}
       const confirmed = window.confirm(`Padam lagu "${song.title}"?`);
       if (confirmed) {
         songs = songs.filter((s) => s.id !== id);
-        saveSongs();
         renderAdmin();
         renderLibrary();
       }
