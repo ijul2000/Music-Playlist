@@ -66,33 +66,121 @@
       <span class="aurora aurora-b"></span>
       <span class="noise-overlay"></span>
 
-      <div class="empty-state">
-        <svg class="page-logo" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="logoGrad" x1="10" y1="10" x2="110" y2="110" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#9b5cff"/>
-              <stop offset="100%" stop-color="#4bffa5"/>
-            </linearGradient>
-          </defs>
+      <!-- HOME -->
+      <section class="view active" data-view="home">
+        <div class="empty-state">
+          <svg class="page-logo" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGrad" x1="10" y1="10" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#9b5cff"/>
+                <stop offset="100%" stop-color="#4bffa5"/>
+              </linearGradient>
+            </defs>
+            <circle class="vinyl-disc" cx="60" cy="60" r="46" stroke="url(#logoGrad)" stroke-width="1.4" opacity="0.55"/>
+            <circle class="vinyl-disc" cx="60" cy="60" r="34" stroke="url(#logoGrad)" stroke-width="1.4" opacity="0.35"/>
+            <g class="vinyl-spin">
+              <circle cx="60" cy="60" r="20" fill="#0a0b10" stroke="url(#logoGrad)" stroke-width="1.6"/>
+              <path d="M60 40a20 20 0 0 1 20 20" stroke="url(#logoGrad)" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="60" cy="60" r="13" fill="none" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5"/>
+              <circle cx="60" cy="60" r="4.5" fill="url(#logoGrad)"/>
+            </g>
+          </svg>
+          <h2 class="empty-title">Selamat datang</h2>
+          <p class="empty-label">Ruang ini masih kosong — mula tambah lagu kegemaran anda.</p>
+        </div>
+      </section>
 
-          <circle class="vinyl-disc" cx="60" cy="60" r="46" stroke="url(#logoGrad)" stroke-width="1.4" opacity="0.55"/>
-          <circle class="vinyl-disc" cx="60" cy="60" r="34" stroke="url(#logoGrad)" stroke-width="1.4" opacity="0.35"/>
+      <!-- LIBRARY -->
+      <section class="view" data-view="library">
+        <div class="view-inner">
+          <div class="view-header">
+            <div>
+              <h2 class="view-title">Library anda</h2>
+              <p class="view-sub">Semua lagu yang telah ditambah oleh admin</p>
+            </div>
+          </div>
+          <div class="song-grid" id="library-grid"></div>
+          <div class="table-empty" id="library-empty">Belum ada lagu. Tambah lagu di panel Admin.</div>
+        </div>
+      </section>
 
-          <g class="vinyl-spin">
-            <circle cx="60" cy="60" r="20" fill="#0a0b10" stroke="url(#logoGrad)" stroke-width="1.6"/>
-            <path d="M60 40a20 20 0 0 1 20 20" stroke="url(#logoGrad)" stroke-width="1.6" stroke-linecap="round"/>
-            <circle cx="60" cy="60" r="13" fill="none" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5"/>
-            <circle cx="60" cy="60" r="4.5" fill="url(#logoGrad)"/>
-          </g>
-        </svg>
+      <!-- ADMIN -->
+      <section class="view" data-view="admin">
+        <div class="view-inner">
+          <div class="view-header">
+            <div>
+              <h2 class="view-title">Panel admin</h2>
+              <p class="view-sub">Urus senarai lagu — tambah, edit atau padam</p>
+            </div>
+            <div class="admin-header-actions">
+              <button class="btn-ghost" id="btn-download" type="button">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" style="vertical-align:-2px; margin-right:6px;"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Muat Turun songs.js
+              </button>
+              <button class="btn-primary" id="btn-add-song" type="button">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                Tambah Lagu
+              </button>
+            </div>
+          </div>
 
-        <h2 class="empty-title" id="page-title">Selamat datang</h2>
-        <p class="empty-label" id="page-label">Ruang ini masih kosong — mula tambah lagu kegemaran anda.</p>
-      </div>
+          <div class="admin-table-wrap">
+            <table class="admin-table" id="admin-table">
+              <thead>
+                <tr>
+                  <th>Poster</th>
+                  <th>Tajuk</th>
+                  <th>Artist</th>
+                  <th>Tahun</th>
+                  <th class="th-actions"></th>
+                </tr>
+              </thead>
+              <tbody id="admin-tbody"></tbody>
+            </table>
+            <div class="table-empty" id="admin-empty">Belum ada lagu ditambah. Klik "Tambah Lagu" untuk mula.</div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
   </div>
 
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-card">
+      <h3 class="modal-title" id="modal-title">Tambah Lagu</h3>
+      <form id="song-form">
+        <label class="field">
+          <span>Tajuk Lagu</span>
+          <input type="text" id="f-title" placeholder="cth: Bunga" required>
+        </label>
+        <label class="field">
+          <span>Artist</span>
+          <input type="text" id="f-artist" placeholder="cth: Hael Husaini" required>
+        </label>
+        <label class="field">
+          <span>Tahun</span>
+          <input type="number" id="f-year" placeholder="cth: 2023" min="1900" max="2099" required>
+        </label>
+        <label class="field">
+          <span>Link Poster</span>
+          <input type="url" id="f-poster" placeholder="https://..." required>
+        </label>
+        <label class="field">
+          <span>Link Lagu</span>
+          <input type="url" id="f-audio" placeholder="https://..." required>
+        </label>
+        <p class="form-error" id="form-error"></p>
+        <div class="modal-actions">
+          <button type="button" class="btn-ghost" id="btn-cancel">Batal</button>
+          <button type="submit" class="btn-primary">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<script src="songs.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
