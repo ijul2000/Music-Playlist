@@ -1,8 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
-  var sidebar = document.getElementById('sidebar');
-  var toggleBtn = document.getElementById('toggleBtn');
+document.addEventListener('DOMContentLoaded', () => {
+  const navButtons = document.querySelectorAll('.nav-btn');
+  const pageLabel = document.getElementById('page-label');
 
-  toggleBtn.addEventListener('click', function () {
-    sidebar.classList.toggle('collapsed');
+  const pageNames = {
+    home: 'Home',
+    library: 'Library',
+    admin: 'Admin'
+  };
+
+  navButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      navButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const page = btn.getAttribute('data-page');
+      if (pageLabel) {
+        pageLabel.textContent = pageNames[page] || page;
+      }
+    });
   });
 });
