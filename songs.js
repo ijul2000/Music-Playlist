@@ -4,37 +4,34 @@
   Anda boleh EDIT fail ini secara manual untuk tambah, ubah, atau
   padam lagu terus dalam kod, TANPA perlu guna panel Admin.
 
-  Medan setiap lagu:
-    id, title, artist, year, poster (URL imej), audio (URL lagu)
+  Setiap lagu ialah satu objek dengan medan berikut:
+    title  - tajuk lagu
+    artist - nama artist
+    year   - tahun keluaran (nombor)
+    poster - link/URL imej poster/cover lagu
+    audio  - link/URL fail audio lagu (mp3, dsb.)
 
-  Fail ini dijana dari panel Admin. Muat naik fail ini ke repo
-  GitHub anda (gantikan songs.js sedia ada) supaya lagu kekal
-  untuk semua pelawat, bukan setakat pelayar ini sahaja.
+  Contoh:
+    {
+      title: "Nama Lagu Anda",
+      artist: "Nama Artist",
+      year: 2024,
+      poster: "https://contoh.com/poster.jpg",
+      audio: "https://contoh.com/lagu.mp3"
+    }
+
+  Tambah objek baru dalam array PRIME_MUSIC_SONGS di bawah,
+  dipisahkan dengan koma. Tak perlu isi "id" — sistem akan
+  urus sendiri. Panel Admin di laman web akan guna senarai
+  ini sebagai data permulaan.
 */
 
 const PRIME_MUSIC_SONGS = [
   {
-    id: "1",
-    title: "bunga",
-    artist: "hael",
-    year: 2023,
-    poster: "https://apicms.mstar.com.my/uploads/images/2025/09/29/3545364.jpg",
-    audio: "https://apicms.mstar.com.my/uploads/images/2025/09/29/3545364.jpg"
-  }
-  {
-    id: "2",
-    title: "aaga",
-    artist: "hael",
-    year: 2023,
-    poster: "https://apicms.mstar.com.my/uploads/images/2025/09/29/3545364.jpg",
-    audio: "https://apicms.mstar.com.my/uploads/images/2025/09/29/3545364.jpg"
-  }
-  {
-    id: "3",
-    title: "basdga",
-    artist: "hael",
-    year: 2023,
-    poster: "https://apicms.mstar.com.my/uploads/images/2025/09/29/3545364.jpg",
-    audio: "https://apicms.mstar.com.my/uploads/images/2025/09/29/3545364.jpg"
+    title: "Contoh Lagu",
+    artist: "Contoh Artist",
+    year: 2024,
+    poster: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop",
+    audio: "https://example.com/contoh-lagu.mp3"
   }
 ];
