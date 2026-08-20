@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Prime Music</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Music</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="app-container">
+  <div class="app">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <span class="logo">◈ Prime Music</span>
-        <button class="toggle-btn" id="toggleBtn">☰</button>
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <h1 class="brand-name">Prime<span>Music</span></h1>
       </div>
 
-      <nav class="sidebar-nav">
-        <a href="#" class="nav-item active">
-          <span class="icon">🏠</span><span class="label">Home</span>
-        </a>
-        <a href="#" class="nav-item">
-          <span class="icon">📊</span><span class="label">Dashboard</span>
-        </a>
-        <a href="#" class="nav-item">
-          <span class="icon">⚙️</span><span class="label">Settings</span>
-        </a>
-        <a href="#" class="nav-item">
-          <span class="icon">📁</span><span class="label">Fail</span>
-        </a>
-        <a href="#" class="nav-item">
-          <span class="icon">ℹ️</span><span class="label">Tentang</span>
-        </a>
+      <nav class="nav">
+        <button class="nav-btn active" data-page="home">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><path d="M3 11.5L12 4l9 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 10v9a1 1 0 0 0 1 1H10v-6h4v6h3.5a1 1 0 0 0 1-1v-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Home</span>
+        </button>
+
+        <button class="nav-btn" data-page="library">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="4" height="18" rx="1" stroke="currentColor" stroke-width="1.8"/><rect x="10" y="7" width="4" height="14" rx="1" stroke="currentColor" stroke-width="1.8"/><rect x="16" y="10" width="4" height="11" rx="1" stroke="currentColor" stroke-width="1.8"/></svg>
+          <span>Library</span>
+        </button>
+
+        <button class="nav-btn" data-page="admin">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 13.5a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1.04 1.56V19.5a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1.04-1.56 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.56-1.04H4.5a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.56-1.04 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34H10.5a1.7 1.7 0 0 0 1.04-1.56V4.5a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1.04 1.56 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87V10.5a1.7 1.7 0 0 0 1.56 1.04H19.5a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.56 1.04Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <span>Admin</span>
+        </button>
       </nav>
 
-      <div class="sidebar-footer">
-        <span>v1.0</span>
+      <div class="sidebar-foot">
+        <span class="dot"></span>
+        <span>v0.1</span>
       </div>
     </aside>
 
-    <!-- MAIN CONTENT (kosong) -->
-    <main class="main-content" id="mainContent">
-      <!-- Sengaja dibiarkan kosong -->
+    <main class="content">
+      <div class="empty-state">
+        <div class="glow-orb"></div>
+        <p class="empty-label" id="page-label">Home</p>
+      </div>
     </main>
 
   </div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
