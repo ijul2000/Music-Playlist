@@ -29,4 +29,25 @@ const PRIME_MUSIC_SONGS = [
     poster: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg",
     audio: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg"
   }
+  {
+    title: "sss",
+    artist: "ssss",
+    year: 2022,
+    poster: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg",
+    audio: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg"
+  }
+{
+    title: "sdaga",
+    artist: "ssss",
+    year: 2022,
+    poster: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg",
+    audio: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg"
+  }
+{
+    title: "qweqwa",
+    artist: "ssss",
+    year: 2022,
+    poster: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg",
+    audio: "https://hibglam.com.my/wp-content/uploads/2025/01/HAEL-HUSAINI-1.jpg"
+  }
 ];
